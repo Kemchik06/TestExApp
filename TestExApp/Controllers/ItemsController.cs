@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TestExApp.Models;
-using TestExApp.Models.Dtos;
 using TestExApp.Services;
 
 namespace TestExApp.Controllers

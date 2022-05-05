@@ -30,10 +30,7 @@ export class ItemComponent implements OnInit {
   }
 
   public saveItems(){
-    let itemsCreateRequest = new ItemsCreateRequest();
-    itemsCreateRequest.Items = this.itemsToCreate;
-
-    this.itemService.saveItems(itemsCreateRequest).subscribe(data =>{
+    this.itemService.saveItems(this.itemsToCreate).subscribe(data =>{
       this.itemsToCreate = [];
       this.getAll();
     },

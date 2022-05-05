@@ -7,6 +7,7 @@ import { ItemComponent } from './item/item.component';
 import { HttpClientModule } from '@angular/common/http';
 import ItemService from './shared/services/item.servise';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [ItemService],
   bootstrap: [AppComponent]

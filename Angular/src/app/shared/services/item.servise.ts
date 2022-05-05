@@ -15,13 +15,12 @@ export default class ItemService {
     return this.http.get<Array<Item>>(this.itemsApi);
   }
 
-  saveItems(request: ItemsCreateRequest): Observable<ItemsCreateRequest> {
-    let items = JSON.stringify(request.Items);
+  saveItems(items: Array<Item>): Observable<Array<Item>> {
     var headers = new HttpHeaders({
       "Content-Type": "application/json",
       "Accept": "application/json"
   });
-    return this.http.post<ItemsCreateRequest>(this.itemsApi, items, {headers: headers});
+    return this.http.post<Array<Item>>(this.itemsApi, items, {headers: headers});
   }
 
 }
