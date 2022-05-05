@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using TestExApp.Models;
+using TestExApp.Models.Dtos;
 
 namespace TestExApp.Services
 {
@@ -8,6 +9,6 @@ namespace TestExApp.Services
     {
         Task SaveItems(List<Item> items);
 
-        Task<List<Item>> GetAll();
+        Task<ItemDto> GetAll(int pageSize, int pageNumber);
     }
 }

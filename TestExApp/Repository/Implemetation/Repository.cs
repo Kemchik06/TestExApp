@@ -25,15 +25,20 @@ namespace TestExApp.Repository.Implemetation
             await dbContext.SaveChangesAsync();
         }
 
-        public async Task<List<T>> SelectAll<T>() where T : class
+        public IQueryable<T> SelectAll<T>() where T : class
         {
-            return await dbContext.Set<T>().ToListAsync();
+            return dbContext.Set<T>().AsQueryable<T>();
         }
 
         public async Task DeleteAll<T>() where T : class
         {
             dbContext.Set<T>().RemoveRange(dbContext.Set<T>());
            await dbContext.SaveChangesAsync();
+        }
+
+        public async Task<int> GetItemsCount<T>() where T : class
+        {
+            return  await dbContext.Set<T>().CountAsync();
         }
     }
 }

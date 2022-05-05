@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TestExApp.Models;
+using TestExApp.Models.Dtos;
 using TestExApp.Services;
 
 namespace TestExApp.Controllers
@@ -18,9 +19,9 @@ namespace TestExApp.Controllers
         }
 
         [HttpGet]
-        public async Task<List<Item>> List()
+        public async Task<ItemDto> List(int pageSize, int pageNumber)
         {
-            return await _itemService.GetAll();
+            return await _itemService.GetAll(pageSize, pageNumber);
         }
 
         [HttpPost]

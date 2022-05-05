@@ -7,8 +7,9 @@ namespace TestExApp.Repository
 {
     public interface IRepository
     {
-        Task<List<T>> SelectAll<T>() where T : class;
+        IQueryable<T> SelectAll<T>() where T : class;
         Task SaveListAsync<T>(List<T> list) where T : class;
         Task DeleteAll<T>() where T : class;
+        Task<int> GetItemsCount<T>() where T : class;
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TestExApp.Models;
+using TestExApp.Models.Dtos;
 using TestExApp.Repository;
 
 namespace TestExApp.Services.Implementation
@@ -16,9 +17,19 @@ namespace TestExApp.Services.Implementation
             _repository = repository;
         }
 
-        public async Task<List<Item>> GetAll()
+        public async Task<ItemDto> GetAll(int pageSize, int pageNumber)
         {
-            return await _repository.SelectAll<Item>();
+            var itemsCount = await _repository.GetItemsCount<Item>();
+            var items = await _repository.SelectAll<Item>()
+                .Skip(pageSize * (pageNumber-1))
+                .Take(5)
+                .ToListAsync();
+
+            return new ItemDto
+            {
+                Items = items,
+                ItemsCount = itemsCount
+            };
         }
 
         public async Task SaveItems(List<Item> items)

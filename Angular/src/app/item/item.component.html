@@ -47,5 +47,11 @@
                 </tr>
             </tbody>
         </table>
+
+        <ul class="pagination">
+            <li style="margin-left: 5px;" class="page-item" *ngFor="let number of buttonsArray" (click)="getAll(number)">
+                <a class="page-link" >{{number}}</a>
+            </li>
+        </ul>
     </div>
 </div>
