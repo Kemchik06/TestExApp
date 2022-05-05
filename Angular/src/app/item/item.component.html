@@ -1,0 +1,51 @@
+<div style="margin: auto; max-width: 700px;">
+
+    <div style="margin-top: 10px;">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let itemToCreate of itemsToCreate">
+                    <td>{{itemToCreate.code}}</td>
+                    <td>{{itemToCreate.value}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="form-control" type="number" [(ngModel)]="newItem.code"  />
+                    </td>
+                    <td>
+                        <input class="form-control" type="text" [(ngModel)]="newItem.value" />
+                    </td>
+                    
+                    <td>
+                        <button class="btn btn-default" type="button" (click)="addItem()">Add</button>
+                    </td>
+                </tr>
+                <div>
+                    <button class="btn btn-default"  type="button" (click)="saveItems()">Save</button>
+                </div>
+            </tbody>
+        </table>
+    </div>
+
+    <div style="margin-top: 10px;">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items">
+                    <td>{{item.code}}</td>
+                    <td>{{item.value}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
