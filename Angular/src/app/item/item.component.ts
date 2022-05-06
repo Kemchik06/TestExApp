@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Item } from '../shared/models/item.model';
 import ItemService from '../shared/services/item.servise';
 import { FormControl } from '@angular/forms';
-import { ItemsCreateRequest } from '../shared/models/itemsCreateRequest.model';
 
 @Component({
   selector: 'app-item',

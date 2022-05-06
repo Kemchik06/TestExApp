@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Item } from '../models/item.model';
-import { ItemsCreateRequest } from '../models/itemsCreateRequest.model';
 import { ItemDto } from '../models/itemDto.model';
 
 @Injectable()
