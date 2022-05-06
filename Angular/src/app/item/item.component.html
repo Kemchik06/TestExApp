@@ -1,6 +1,7 @@
 <div style="margin: auto; max-width: 700px;">
 
     <div style="margin-top: 10px;">
+        <div style="text-align: center;">Добавление объектов</div>
         <table class="table">
             <thead>
                 <tr>
@@ -33,6 +34,7 @@
     </div>
 
     <div style="margin-top: 10px;">
+        <div style="text-align: center;">Сохраненные объекты</div>
         <table class="table">
             <thead>
                 <tr>
@@ -48,7 +50,7 @@
             </tbody>
         </table>
 
-        <ul class="pagination">
+        <ul *ngIf="itemsCount > 5" class="pagination">
             <li style="margin-left: 5px;" class="page-item" *ngFor="let number of buttonsArray" (click)="getAll(number)">
                 <a class="page-link" >{{number}}</a>
             </li>
