@@ -28,7 +28,7 @@ namespace TestExApp.Services.Implementation
                 var itemsCount = await _repository.GetItemsCount<Item>();
                 var items = await _repository.SelectAll<Item>()
                     .Skip(pageSize * (pageNumber - 1))
-                    .Take(5)
+                    .Take(pageSize)
                     .ToListAsync();
 
                 return new ItemDto
